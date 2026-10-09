@@ -1,0 +1,249 @@
+body {
+    background: linear-gradient(135deg, #dbffd8 0%, #d6fadf 50%, #fbfdfc 100%);
+    font-family: 'Outfit', 'Poppins', sans-serif;
+    color: #2d3748;
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 14% auto 22%;
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.grid-container > div{
+    background: rgb(215, 255, 169);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(109, 255, 80);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ตำแหน่ง grid item  */
+
+#header{
+	grid-column: 1 / span 3;
+    text-align: center;
+    padding: 20px;
+}
+
+#menu {
+    grid-column: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+#main1{
+	grid-column: 2 / span 1;
+    text-align: center;
+}
+#right{
+    grid-column: 3 / span 1;
+    text-align: center;
+}
+
+#footer{
+	grid-column: 1 / span 3;
+    text-align: center;
+}
+/* head */
+#head{
+    display: flex;
+    align-items: center;
+}
+.pizza{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+
+/* Menu Side bar left */
+.menu-item {
+    background-color: #ffffff;
+    color: #00ffbf;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: #00ffbf;
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.25);
+    border-color: #91ff00;
+}
+/* main1 */
+.main1{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.568);
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 20px;
+}
+#main2{
+    background-color: rgba(255, 255, 255, 0.568);
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 20px;
+}
+#pic2{
+    width: 300px;
+    height: 400px;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+#text1{
+    text-align: left;
+    padding: 5px;
+}
+.pic3{
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 50%;
+    /* ทำให้ข้อความไม่บีบรูป */
+    flex-shrink: 0;
+}
+ul{
+    text-align: left;
+    font-weight: bold;
+}
+
+/* link */
+  
+/* ทำให้กล่องลิงค์เปลียนสีเมื่อเอาเมาส์ไปชี้ */
+div a {
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #00ffbf;
+    padding: 6px 16px;
+    border-radius: 16px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+div a:hover {
+    background-color: #00ffbf;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(43, 108, 176, 0.25);
+}
+
+div a:active {
+    transform: translateY(1px) scale(0.97);
+}
+
+#source{
+    background-color: rgb(255, 164, 164);
+    border: 2px solid rgb(255, 84, 84);
+    border-radius: 15px;
+    display: flex;    
+    align-items: center;
+
+}
+#link{
+    background-color: #00f8ae;
+    border: 2px #d1fab5;
+    border-radius: 10px;
+    text-align: center;
+}
+.right_pic{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+/* pizza หมุนๆ */
+.rotate-pizza-container {
+    margin-top: 20px;
+}
+
+.rotate-pizza {
+    width: 100%;
+    animation: rotatePizza 6s linear infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes rotatePizza {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+    
+@media only screen and (max-width: 768px) {
+	.grid-container {
+		  grid-template-columns: auto 28%;
+        gap: 14px;
+        padding: 0 10px;	  
+	}
+
+	#header{
+		grid-column: 1 / span 2;
+	}
+    #menu {
+        grid-column: 1 / span 2;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .menu-item {
+        display: inline-block;
+    }
+    #main1 {
+        grid-column: 1 / span 1;
+    }
+	#footer{
+	 grid-column: 1 / span 2;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #header, #menu, #main, #right, #footer {
+        grid-column: 1 / span 1;
+    }
+
+    #menu {
+        flex-direction: column;
+    }
+    .rotate-pizza{
+        width: 50%;
+    }
+    .right_pic{
+        width: 50%;
+    }
+}
